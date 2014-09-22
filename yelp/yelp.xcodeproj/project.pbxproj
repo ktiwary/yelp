@@ -16,6 +16,12 @@
 		67E3D1F419CE1B4C00F85503 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67E3D1F319CE1B4C00F85503 /* SearchViewController.swift */; };
 		67E3D1F619CE4B3400F85503 /* SearchResultTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67E3D1F519CE4B3400F85503 /* SearchResultTableViewCell.swift */; };
 		67E3D20219CE5C7A00F85503 /* YelpClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 67E3D20119CE5C7A00F85503 /* YelpClient.m */; };
+		67E3D20619CF569D00F85503 /* FiltersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67E3D20519CF569D00F85503 /* FiltersViewController.swift */; };
+		67E3D20819CF89A900F85503 /* SortCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67E3D20719CF89A900F85503 /* SortCell.swift */; };
+		67E3D20B19CF89E000F85503 /* RadiusCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67E3D20A19CF89E000F85503 /* RadiusCell.swift */; };
+		67E3D20D19CF89EC00F85503 /* CategoryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67E3D20C19CF89EC00F85503 /* CategoryCell.swift */; };
+		67E3D20F19CF89FA00F85503 /* PriceCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67E3D20E19CF89FA00F85503 /* PriceCell.swift */; };
+		67E3D21119CF8F6500F85503 /* DealsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67E3D21019CF8F6500F85503 /* DealsCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -43,6 +49,12 @@
 		67E3D20119CE5C7A00F85503 /* YelpClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YelpClient.m; sourceTree = "<group>"; };
 		67E3D20319CE5CE900F85503 /* yelp-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "yelp-Bridging-Header.h"; sourceTree = "<group>"; };
 		67E3D20419CE5FE200F85503 /* YelpClient.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YelpClient.h; sourceTree = "<group>"; };
+		67E3D20519CF569D00F85503 /* FiltersViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FiltersViewController.swift; sourceTree = "<group>"; };
+		67E3D20719CF89A900F85503 /* SortCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SortCell.swift; sourceTree = "<group>"; };
+		67E3D20A19CF89E000F85503 /* RadiusCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RadiusCell.swift; sourceTree = "<group>"; };
+		67E3D20C19CF89EC00F85503 /* CategoryCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategoryCell.swift; sourceTree = "<group>"; };
+		67E3D20E19CF89FA00F85503 /* PriceCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PriceCell.swift; sourceTree = "<group>"; };
+		67E3D21019CF8F6500F85503 /* DealsCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DealsCell.swift; sourceTree = "<group>"; };
 		946FF8A5F382426E83AB1A70 /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
 		A36A8F85EA274309B4CF8F18 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -97,6 +109,7 @@
 		67373AAD19C91FF1000DC6B0 /* yelp */ = {
 			isa = PBXGroup;
 			children = (
+				67E3D20919CF89B300F85503 /* FilterViews */,
 				67E3D1F719CE5AA700F85503 /* API */,
 				67373AB019C91FF1000DC6B0 /* AppDelegate.swift */,
 				67373AB419C91FF1000DC6B0 /* Main.storyboard */,
@@ -106,6 +119,7 @@
 				67373AAE19C91FF1000DC6B0 /* Supporting Files */,
 				67E3D1F319CE1B4C00F85503 /* SearchViewController.swift */,
 				67E3D20319CE5CE900F85503 /* yelp-Bridging-Header.h */,
+				67E3D20519CF569D00F85503 /* FiltersViewController.swift */,
 			);
 			path = yelp;
 			sourceTree = "<group>";
@@ -142,6 +156,18 @@
 				67E3D20419CE5FE200F85503 /* YelpClient.h */,
 			);
 			name = API;
+			sourceTree = "<group>";
+		};
+		67E3D20919CF89B300F85503 /* FilterViews */ = {
+			isa = PBXGroup;
+			children = (
+				67E3D21019CF8F6500F85503 /* DealsCell.swift */,
+				67E3D20719CF89A900F85503 /* SortCell.swift */,
+				67E3D20A19CF89E000F85503 /* RadiusCell.swift */,
+				67E3D20C19CF89EC00F85503 /* CategoryCell.swift */,
+				67E3D20E19CF89FA00F85503 /* PriceCell.swift */,
+			);
+			name = FilterViews;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -280,9 +306,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				67E3D1F419CE1B4C00F85503 /* SearchViewController.swift in Sources */,
+				67E3D20F19CF89FA00F85503 /* PriceCell.swift in Sources */,
+				67E3D20B19CF89E000F85503 /* RadiusCell.swift in Sources */,
+				67E3D20819CF89A900F85503 /* SortCell.swift in Sources */,
+				67E3D20D19CF89EC00F85503 /* CategoryCell.swift in Sources */,
+				67E3D21119CF8F6500F85503 /* DealsCell.swift in Sources */,
 				67373AB119C91FF1000DC6B0 /* AppDelegate.swift in Sources */,
 				67E3D20219CE5C7A00F85503 /* YelpClient.m in Sources */,
 				67E3D1F619CE4B3400F85503 /* SearchResultTableViewCell.swift in Sources */,
+				67E3D20619CF569D00F85503 /* FiltersViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

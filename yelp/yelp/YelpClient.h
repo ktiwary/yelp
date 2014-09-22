@@ -15,4 +15,6 @@
 
 - (AFHTTPRequestOperation *)searchWithTerm:(NSString *)term success:(void (^)(AFHTTPRequestOperation *operation, id response))success failure:(void (^)(AFHTTPRequestOperation *operation, NSError *error))failure;
 
+- (AFHTTPRequestOperation *)searchWithFilters:(NSString *)term categoryFilter:(NSString *)categoryFilter radiusFilter:(NSString *)radiusFilter dealsFilter:(NSString *)dealsFilter sortFilter:(NSString *)sortFilter success:(void (^)(AFHTTPRequestOperation *operation, id response))success failure:(void (^)(AFHTTPRequestOperation *operation, NSError *error))failure;
+
 @end
