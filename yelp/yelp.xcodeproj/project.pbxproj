@@ -13,6 +13,7 @@
 		67373AB819C91FF1000DC6B0 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 67373AB719C91FF1000DC6B0 /* Images.xcassets */; };
 		67373ABB19C91FF1000DC6B0 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 67373AB919C91FF1000DC6B0 /* LaunchScreen.xib */; };
 		67373AC719C91FF1000DC6B0 /* yelpTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67373AC619C91FF1000DC6B0 /* yelpTests.swift */; };
+		677F7F9C19D0E93C009FCEE8 /* YelpClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 677F7F9B19D0E93C009FCEE8 /* YelpClient.swift */; };
 		67E3D1F419CE1B4C00F85503 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67E3D1F319CE1B4C00F85503 /* SearchViewController.swift */; };
 		67E3D1F619CE4B3400F85503 /* SearchResultTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67E3D1F519CE4B3400F85503 /* SearchResultTableViewCell.swift */; };
 		67E3D20219CE5C7A00F85503 /* YelpClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 67E3D20119CE5C7A00F85503 /* YelpClient.m */; };
@@ -44,6 +45,7 @@
 		67373AC019C91FF1000DC6B0 /* yelpTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = yelpTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		67373AC519C91FF1000DC6B0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		67373AC619C91FF1000DC6B0 /* yelpTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = yelpTests.swift; sourceTree = "<group>"; };
+		677F7F9B19D0E93C009FCEE8 /* YelpClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YelpClient.swift; sourceTree = "<group>"; };
 		67E3D1F319CE1B4C00F85503 /* SearchViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
 		67E3D1F519CE4B3400F85503 /* SearchResultTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchResultTableViewCell.swift; sourceTree = "<group>"; };
 		67E3D20119CE5C7A00F85503 /* YelpClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YelpClient.m; sourceTree = "<group>"; };
@@ -154,6 +156,7 @@
 			children = (
 				67E3D20119CE5C7A00F85503 /* YelpClient.m */,
 				67E3D20419CE5FE200F85503 /* YelpClient.h */,
+				677F7F9B19D0E93C009FCEE8 /* YelpClient.swift */,
 			);
 			name = API;
 			sourceTree = "<group>";
@@ -310,6 +313,7 @@
 				67E3D20B19CF89E000F85503 /* RadiusCell.swift in Sources */,
 				67E3D20819CF89A900F85503 /* SortCell.swift in Sources */,
 				67E3D20D19CF89EC00F85503 /* CategoryCell.swift in Sources */,
+				677F7F9C19D0E93C009FCEE8 /* YelpClient.swift in Sources */,
 				67E3D21119CF8F6500F85503 /* DealsCell.swift in Sources */,
 				67373AB119C91FF1000DC6B0 /* AppDelegate.swift in Sources */,
 				67E3D20219CE5C7A00F85503 /* YelpClient.m in Sources */,
@@ -440,6 +444,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = yelp/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "yelp/yelp-Bridging-Header.h";
@@ -454,6 +459,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = yelp/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "yelp/yelp-Bridging-Header.h";

@@ -8,29 +8,56 @@
 
 import UIKit
 
-class SearchViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
+class SearchViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, UISearchBarDelegate {
 
     @IBOutlet weak var resultTableView: UITableView!
     
+    @IBOutlet weak var searchNavigationItem: UINavigationItem!
     let ConsumerKey	= "1zNdMu4fossEqdlWzG8pWw"
     let ConsumerSecret = "uARbje0JuLYDoh7RrXwRHBf6LK4"
     let Token = "hE0crxcGsiFJrNPkaSp0FOHbK9hsBCKS"
     let TokenSecret = "lTXiwIyOc5Eq0YenH6s98xOa7m4"
     var resultDictionary :[NSDictionary]!
     
+    var term = "Thai"
+    var sort = 1
+    var radiusFilter: Double = 10 * 1609.34
+    var dealsFilter = false
+    var categoryFilter = ""
+
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        let yelpClient = YelpClient(consumerKey: ConsumerKey, consumerSecret: ConsumerSecret, accessToken: Token, accessSecret: TokenSecret)
-//        yelpClient.searchWithTerm("Thai", success: {(request: AFHTTPRequestOperation!, response: AnyObject!) -> Void in
-//            self.populateSearchResult(request, response: response)}, failure: {(request: AFHTTPRequestOperation!, error: NSError!) -> Void in })
-        
-        yelpClient.searchWithFilters("Thai", categoryFilter: "", radiusFilter: "", dealsFilter: "", sortFilter: "", success: {(request: AFHTTPRequestOperation!, response: AnyObject!) -> Void in
-            self.populateSearchResult(request, response: response)}, failure: {(request: AFHTTPRequestOperation!, error: NSError!) -> Void in })
+        var searchBar = UISearchBar()
+        self.navigationItem.titleView = searchBar
+        searchBar.delegate = self
+
+        searchItemWithFilters()
         
         resultTableView.dataSource = self
         resultTableView.delegate = self
 
 
+    }
+    
+    func tableView(tableView: UITableView, estimatedHeightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
+        return UITableViewAutomaticDimension
+    }
+    
+    func searchItemWithFilters() {
+        let yelpClient = YelpClient(consumerKey: ConsumerKey, consumerSecret: ConsumerSecret, accessToken: Token, accessSecret: TokenSecret)
+        yelpClient.searchWithFilters(term, sort: sort, radiusFilter: radiusFilter, dealsFilter: dealsFilter, categoryFilter: categoryFilter, success: {(request: AFHTTPRequestOperation!, response: AnyObject!) -> Void in
+        self.populateSearchResult(request, response: response)}, failure: {(request: AFHTTPRequestOperation!, error: NSError!) -> Void in })
+    }
+    
+    
+    func searchBarSearchButtonClicked(searchBar: UISearchBar) {
+        println(searchBar.text)
+        let yelpClient = YelpClient(consumerKey: ConsumerKey, consumerSecret: ConsumerSecret, accessToken: Token, accessSecret: TokenSecret)
+        self.term = searchBar.text
+        yelpClient.searchWithFilters(term, sort: sort, radiusFilter: radiusFilter, dealsFilter: dealsFilter, categoryFilter: categoryFilter, success: {(request: AFHTTPRequestOperation!, response: AnyObject!) -> Void in
+            self.populateSearchResult(request, response: response)}, failure: {(request: AFHTTPRequestOperation!, error: NSError!) -> Void in })
+//        searchItemWithFilters()
     }
     
     func populateSearchResult (request :AFHTTPRequestOperation!, response: AnyObject!) -> Void {
@@ -41,7 +68,7 @@ class SearchViewController: UIViewController, UITableViewDataSource, UITableView
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if(resultDictionary == nil) {
-            return 0
+            return -1
         } else {
             return resultDictionary.count;
         }
@@ -58,8 +85,6 @@ class SearchViewController: UIViewController, UITableViewDataSource, UITableView
         let address = location["address"] as? NSArray
         cell.addressLabel.text = address?.objectAtIndex(0) as NSString
         let reviewsCount = resultElements["review_count"] as Int
-//        println(resultElements)
-        println(reviewsCount)
         cell.reviewLabel.text = "\(reviewsCount) reviews"
         let category = resultElements["categories"] as NSArray
         let categoryInner = category.objectAtIndex(0) as NSArray
@@ -68,9 +93,7 @@ class SearchViewController: UIViewController, UITableViewDataSource, UITableView
             categoryStrings += categoryObject as String
             categoryStrings += ","
         }
-//        categoryStrings = categoryStrings.stringByDeletingLastPathComponent
         cell.specialityLabel.text = categoryStrings
-//        println(categoryStrings)
         let restaurantImageUrl = resultElements["image_url"] as String
         cell.restaurantImageView.setImageWithURL(NSURL(string: restaurantImageUrl))
         let ratingsImageUrl = resultElements["rating_img_url"] as String
@@ -84,6 +107,11 @@ class SearchViewController: UIViewController, UITableViewDataSource, UITableView
     }
     
 
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject!) {
+        var filterView = segue.destinationViewController as FiltersViewController
+        filterView.term = self.term
+    }
+    
     /*
     // MARK: - Navigation
 
